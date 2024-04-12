@@ -24,8 +24,8 @@ const Message: React.FC<MessageProps> = ({ title, lastMessage, createdAt }) => {
       <View style={{ flexDirection: 'row', alignItems: 'center', width: '100%', padding: 10 }}>
         <Image source={{ uri: randomImage }} style={{ width: 50, height: 50, borderRadius: 25 }} />
         <View style={{ marginLeft: 10, width: '100%' }}>
-          <Text style={{ fontWeight: 'bold', color: Colors.dark.text }}>{title}</Text>
-          <Text style={{ color: Colors.dark.text }}>{lastMessage}</Text>
+          <Text style={{ fontWeight: 'bold', color: 'black' }}>{title}</Text>
+          <Text style={{ color: 'black' }}>{lastMessage}</Text>
           <Text style={{ color: 'gray' }}>{createdAt.toDateString()}</Text>
         </View>
       </View>
