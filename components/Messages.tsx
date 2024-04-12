@@ -20,7 +20,7 @@ const Message: React.FC<MessageProps> = ({ title, lastMessage, createdAt }) => {
 
   return (
     // <TouchableOpacity onPress={() => router.navigate({ pathname: '/chat', params: { chat: { ...chatInitialState, title: chat.title } } })}>
-    <TouchableOpacity >
+    <TouchableOpacity onPress={() => router.navigate({ pathname: '/chat' })}>
       <View style={{ flexDirection: 'row', alignItems: 'center', width: '100%', padding: 10 }}>
         <Image source={{ uri: randomImage }} style={{ width: 50, height: 50, borderRadius: 25 }} />
         <View style={{ marginLeft: 10, width: '100%' }}>
