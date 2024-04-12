@@ -4,6 +4,9 @@ import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
 import Message from '@/components/Messages';
 import { FlatList } from 'react-native';
+import { Firestore } from '../firebase/connection';
+import { doc, getDoc } from 'firebase/firestore';
+import { useEffect } from 'react';
 
 const messages = [
   { id: '1', title: 'Message 1', lastMessage: 'Last message 1', createdAt: new Date() },
@@ -14,6 +17,17 @@ const messages = [
 
 
 export default function TabOneScreen() {
+
+  useEffect(() => {
+    const getMessages = async () => {
+      const docRef = doc(Firestore, 'messages', '1');
+      const docSnap = await getDoc(docRef);
+      console.log(docSnap.data());
+    }
+    getMessages();
+  }
+    , []);
+
   return (
     <View style={styles.container}>
       <FlatList
